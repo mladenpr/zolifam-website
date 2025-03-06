@@ -18,12 +18,40 @@ const config: Config = {
           accent3: '#5fc0cc',
         }
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#6287a2',
+            h1: {
+              color: '#ce8f5a',
+            },
+            h2: {
+              color: '#ce8f5a',
+            },
+            h3: {
+              color: '#ce8f5a',
+            },
+            strong: {
+              color: '#ce8f5a',
+            },
+            a: {
+              color: '#80c8bc',
+              '&:hover': {
+                color: '#5fc0cc',
+              },
+            },
+          },
+        },
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
+
 export default config 
