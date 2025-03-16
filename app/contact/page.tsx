@@ -1,14 +1,10 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-[#F0EFEB]">
-      <Header />
-
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[300px] flex items-center justify-center bg-[#E8E7E3]">
         <h1 className="text-4xl md:text-6xl font-script text-gray-800">Contact Us</h1>
@@ -225,8 +221,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 }

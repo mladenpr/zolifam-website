@@ -34,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable} ${dancingScript.variable} font-sans min-h-screen flex flex-col`}>
+      <body className={`${inter.variable} ${playfair.variable} ${dancingScript.variable} font-sans min-h-screen flex flex-col bg-[#F0EFEB]`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <Header />
           <main className="flex-grow">

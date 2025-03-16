@@ -1,14 +1,10 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import Link from "next/link"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#F0EFEB]">
-      <Header />
-
+    <div className="min-h-screen">
       {/* About Us Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -200,8 +196,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 }
