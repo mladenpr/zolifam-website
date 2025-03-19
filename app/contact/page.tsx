@@ -1,8 +1,42 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { useState, useRef } from "react"
 
 export default function ContactPage() {
+  const [result, setResult] = useState("");
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.currentTarget);
+
+    formData.append("access_key", "99f2c5ba-a21c-4896-ae80-c28eb0c944a7");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult("Message sent successfully! We'll get back to you soon.");
+        formRef.current?.reset();
+      } else {
+        console.log("Error", data);
+        setResult("Something went wrong. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setResult("Something went wrong. Please try again later.");
+    }
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -137,15 +171,17 @@ export default function ContactPage() {
             <div>
               <div className="bg-white rounded-lg shadow-sm p-8">
                 <h3 className="text-2xl font-script text-gray-800 mb-6">Send Us a Message</h3>
-                <form className="space-y-6">
+                <form ref={formRef} onSubmit={onSubmit} className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block font-serif text-gray-700 mb-1">
                       Your Name
                     </label>
                     <Input
                       id="name"
+                      name="name"
                       type="text"
                       placeholder="Name"
+                      required
                       className="w-full px-4 py-2 border border-gray-200 rounded-md font-serif"
                     />
                   </div>
@@ -155,8 +191,10 @@ export default function ContactPage() {
                     </label>
                     <Input
                       id="email"
+                      name="email"
                       type="email"
                       placeholder="Email Address"
+                      required
                       className="w-full px-4 py-2 border border-gray-200 rounded-md font-serif"
                     />
                   </div>
@@ -166,6 +204,7 @@ export default function ContactPage() {
                     </label>
                     <Input
                       id="phone"
+                      name="phone"
                       type="tel"
                       placeholder="Phone Number"
                       className="w-full px-4 py-2 border border-gray-200 rounded-md font-serif"
@@ -177,8 +216,10 @@ export default function ContactPage() {
                     </label>
                     <Input
                       id="subject"
+                      name="subject"
                       type="text"
                       placeholder="Subject"
+                      required
                       className="w-full px-4 py-2 border border-gray-200 rounded-md font-serif"
                     />
                   </div>
@@ -188,15 +229,22 @@ export default function ContactPage() {
                     </label>
                     <Textarea
                       id="message"
+                      name="message"
                       placeholder="Message"
+                      required
                       className="w-full px-4 py-2 border border-gray-200 rounded-md font-serif"
                       rows={6}
                     />
                   </div>
-                  <Button className="w-full rounded-full bg-[#F0EFEB] hover:bg-[#E8E7E3] text-black font-serif border border-black">
+                  <Button type="submit" className="w-full rounded-full bg-[#F0EFEB] hover:bg-[#E8E7E3] text-black font-serif border border-black">
                     Send Message
                   </Button>
                 </form>
+                {result && (
+                  <p className={`mt-4 text-center font-serif ${result.includes("successfully") ? "text-green-600" : "text-red-600"}`}>
+                    {result}
+                  </p>
+                )}
               </div>
 
               <div className="mt-8 bg-[#E8E7E3] rounded-lg p-8">

@@ -1,6 +1,4 @@
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { ApplicationForm } from "./components/ApplicationForm"
 
 export default function WorkWithUsPage() {
   return (
@@ -70,91 +68,7 @@ export default function WorkWithUsPage() {
 
               <div className="bg-white rounded-lg shadow-sm p-8">
                 <h2 className="text-2xl font-script text-gray-800 mb-6">Apply Now</h2>
-                <form className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block font-serif text-gray-700 mb-1">
-                      Full Name
-                    </label>
-                    <Input
-                      id="name"
-                      type="text"
-                      placeholder="Your Name"
-                      className="w-full px-4 py-2 border border-gray-200 rounded-md font-serif"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block font-serif text-gray-700 mb-1">
-                      Email Address
-                    </label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="Your Email"
-                      className="w-full px-4 py-2 border border-gray-200 rounded-md font-serif"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block font-serif text-gray-700 mb-1">
-                      Phone Number
-                    </label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      placeholder="Your Phone"
-                      className="w-full px-4 py-2 border border-gray-200 rounded-md font-serif"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="position" className="block font-serif text-gray-700 mb-1">
-                      Position
-                    </label>
-                    <select
-                      id="position"
-                      className="w-full px-4 py-2 border border-gray-200 rounded-md font-serif bg-white"
-                    >
-                      <option value="">Select Position</option>
-                      <option value="Hair Stylist">Hair Stylist</option>
-                      <option value="Nail Technician">Nail Technician</option>
-                      <option value="Esthetician">Esthetician</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="experience" className="block font-serif text-gray-700 mb-1">
-                      Years of Experience
-                    </label>
-                    <Input
-                      id="experience"
-                      type="number"
-                      placeholder="Years of Experience"
-                      className="w-full px-4 py-2 border border-gray-200 rounded-md font-serif"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block font-serif text-gray-700 mb-1">
-                      Cover Letter
-                    </label>
-                    <Textarea
-                      id="message"
-                      placeholder="Tell us about yourself and why you'd like to join our team"
-                      className="w-full px-4 py-2 border border-gray-200 rounded-md font-serif"
-                      rows={4}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="resume" className="block font-serif text-gray-700 mb-1">
-                      Resume/CV
-                    </label>
-                    <Input
-                      id="resume"
-                      type="file"
-                      className="w-full px-4 py-2 border border-gray-200 rounded-md font-serif"
-                    />
-                  </div>
-                  <Button className="w-full rounded-full bg-[#F0EFEB] hover:bg-[#E8E7E3] text-black font-serif border border-black">
-                    Submit Application
-                  </Button>
-                </form>
+                <ApplicationForm />
               </div>
             </div>
 
