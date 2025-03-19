@@ -1,7 +1,3 @@
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
@@ -87,43 +83,6 @@ export default function AboutPage() {
             </div>
 
             <div className="space-y-12">
-              <div className="bg-white rounded-lg shadow-sm p-8">
-                <h3 className="text-2xl font-script text-gray-800 mb-6">Get In Touch</h3>
-                <form className="space-y-6">
-                  <div>
-                    <Input
-                      type="text"
-                      placeholder="Name"
-                      className="w-full px-4 py-2 border border-gray-200 rounded-md font-serif"
-                    />
-                  </div>
-                  <div>
-                    <Input
-                      type="email"
-                      placeholder="Email Address"
-                      className="w-full px-4 py-2 border border-gray-200 rounded-md font-serif"
-                    />
-                  </div>
-                  <div>
-                    <Input
-                      type="tel"
-                      placeholder="Phone Number"
-                      className="w-full px-4 py-2 border border-gray-200 rounded-md font-serif"
-                    />
-                  </div>
-                  <div>
-                    <Textarea
-                      placeholder="Message"
-                      className="w-full px-4 py-2 border border-gray-200 rounded-md font-serif"
-                      rows={4}
-                    />
-                  </div>
-                  <Button className="w-full rounded-full bg-[#F0EFEB] hover:bg-[#E8E7E3] text-black font-serif border border-black">
-                    Submit
-                  </Button>
-                </form>
-              </div>
-
               <div className="bg-white rounded-lg shadow-sm p-8">
                 <h3 className="text-2xl font-script text-gray-800 mb-6">Find Us</h3>
                 <div className="aspect-video w-full rounded-lg overflow-hidden">

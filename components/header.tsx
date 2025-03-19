@@ -86,9 +86,6 @@ export function Header() {
             <Link href="/services" className="px-2 py-1 hover:text-coral-500 transition-colors">
               OUR SERVICES
             </Link>
-            <Link href="/price-list" className="px-2 py-1 hover:text-coral-500 transition-colors">
-              PRICE LIST
-            </Link>
             <Link href="/work-with-us" className="px-2 py-1 hover:text-coral-500 transition-colors">
               WORK WITH US
             </Link>
